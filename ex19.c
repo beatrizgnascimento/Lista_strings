@@ -1,28 +1,36 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
-int main()
-{
-    char frase[90];
-    int i = 0, maiuscula = 0, minuscula = 0;
+
+int main() {
+    char str[90];
+    int i = 0, tam, num_a = 0, maior;
     
-    scanf("%[^\n]", frase);
+    scanf("%[^\n]", str);
     
-    
-    while(frase[i] != '\0')
-    {
-        if(islower(frase[i]))
-        {
-            minuscula++;
+    while (str[i] != '\0') {
+        if (str[i] == 'a') {
+           num_a++;
         }
-        if(isupper(frase[i]))
-        {
-            maiuscula++;
-        }
-    i++;
+        i++;
     }
     
-    printf("%d %d", minuscula, maiuscula);
+    tam = strlen(str);
     
+   
+     if (num_a > (tam / 2)) 
+        {
+             maior = tam;
+            
+         } 
+     else 
+         {
+            maior = num_a * 2 - 1;
+        }
+    
+    
+   
+    printf("%d", maior);
+   
     return 0;
 }
+
